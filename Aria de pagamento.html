@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de pagamento do curso</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Altura total da tela */
+            width: 100vw; /* Largura total da tela */
+            background-image: url('braco00.jpg'); /* Imagem de fundo */
+            background-size: cover; /* Ocupa 100% de largura e altura */
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column; /* Organiza os itens verticalmente */
+            justify-content: space-between; /* Garante que o conteúdo não sobreponha */
+            align-items: center;
+        }
+
+        .botao-copiar-container {
+            width: 100%; /* Ocupa toda a largura disponível */
+            max-width: 622px; /* Largura máxima */
+            text-align: center;
+            z-index: 1; /* Garante que o botão esteja acima da imagem de fundo */
+        }
+
+        /* Imagem acima do botão */
+        .imagem-topo {
+            width: 100%; /* Largura total */
+            height: auto; /* Altura proporcional */
+            max-height: 766px; /* Máxima altura */
+        }
+
+        /* Imagem abaixo do botão */
+        .imagem-baixo {
+            width: 100%; /* Largura total */
+            height: auto; /* Altura proporcional */
+            max-height: 766px; /* Máxima altura */
+        }
+
+        .botao-copiar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; /* Ocupa toda a largura */
+            max-width: 550px; /* Limita a largura */
+            height: 60px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1; /* Fica acima do fundo */
+        }
+
+        .mensagem {
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="botao-copiar-container">
+        <!-- Imagem acima do botão -->
+        <img src="PAG.IMG1.jpg" alt="Imagem acima" class="imagem-topo">
+
+        <!-- Botão com ícone -->
+        <button class="botao-copiar" onclick="copiarTexto()">
+            COPIAR CÓDIGO DO QR CODE
+        </button>
+
+        <!-- Mensagem abaixo do botão -->
+        <div class="mensagem">ATENÇÃO: após o pagamento, enviar o comprovante para o meu PV no WhatsApp.</div>
+
+        <!-- Imagem abaixo do botão -->
+        <img src="PAG.IMG2.jpg" alt="Imagem abaixo" class="imagem-baixo">
+    </div>
+
+    <script>
+        function copiarTexto() {
+            const codigoQRCode = "00020126940014BR.GOV.BCB.PIX01368dbfb75e-e0f1-419a-b618-1dad84a2e8930232Envie o comprovante para meu pvd520400005303986540543.995802BR5925Thialison Pereira da Conc6009SAO PAULO62140510areeWnNsgX6304DE5D";
+            navigator.clipboard.writeText(codigoQRCode).then(() => {
+                alert("Código QR copiado para a área de transferência!");
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
